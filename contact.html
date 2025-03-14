@@ -1,23 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Contact Us</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="booking.html">Book a Ticket</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <section>
-        <h2>Contact Details</h2>
-        <p>Email: support@busreservation.com</p>
-        <p>Phone: +91 98765 43210</p>
-    </section>
-</body>
-</html>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
+
+const ContactPage = () => {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full max-w-md p-6 bg-white shadow-lg rounded-2xl"
+      >
+        <Card>
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold text-center">Contact Us</h2>
+            <Input placeholder="Your Name" className="my-2" />
+            <Input placeholder="Your Email" className="my-2" />
+            <Textarea placeholder="Your Message" className="my-2" />
+            <Button className="w-full mt-4">Send Message</Button>
+          </CardContent>
+        </Card>
+      </motion.div>
+    </div>
+  );
+};
+
+export default ContactPage;
+
